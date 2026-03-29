@@ -60,6 +60,18 @@ export function StartWebsite ()
         document.getElementById ('intro_dragdrop_text').innerHTML = Loc ('Drag and drop 3D models here.');
         document.getElementById ('intro_formats_title').innerHTML = Loc ('Check an example file:');
 
+        RegisterHeaderPlugin ({
+            registerButtons : (parameters) => {
+                parameters.createHeaderButton ('info', Loc ('Info'), 'info/index.html');
+            }
+        });
+
+        RegisterHeaderPlugin ({
+            registerButtons : (parameters) => {
+                parameters.createHeaderButton ('github', Loc ('GitHub'), 'https://github.com/kovacsv/Online3DViewer');
+            }
+        });
+
         let website = new Website ({
             headerDiv : document.getElementById ('header'),
             headerButtonsDiv : document.getElementById ('header_buttons'),

@@ -29,6 +29,8 @@ import { EnumeratePlugins, PluginType } from './pluginregistry.js';
 import { EnvironmentSettings } from '../engine/viewer/shadingmodel.js';
 import { IntersectionMode } from '../engine/viewer/viewermodel.js';
 import { Loc } from '../engine/core/localization.js';
+import { init } from '@plausible-analytics/tracker';
+
 
 const WebsiteUIState =
 {
@@ -236,6 +238,15 @@ export class Website
         window.addEventListener ('resize', () => {
 			this.layouter.Resize ();
 		});
+
+        init({
+            domain: 'ou0.cc',
+            endpoint: 'https://plausible.canine.tools/api/event',
+            captureOnLocalhost: false,
+            outboundLinks: true
+        });
+
+
     }
 
     HasLoadedModel ()

@@ -71,6 +71,7 @@
 		"typescript": "^5.0.4"
 	},
 	"dependencies": {
+		"@plausible-analytics/tracker": "^0.4.4",
 		"@simonwep/pickr": "1.9.0",
 		"fflate": "0.8.2",
 		"three": "0.176.0"
